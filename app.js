@@ -1,4 +1,4 @@
-const quizdData = [
+const quizData = [
   {
     questions: "What does HTML Stand For?",
     options: [
@@ -51,12 +51,12 @@ const [questionElm, option_1, option_2, option_3, option_4] =
 // console.log(option_4);
 // console.table([questionElm, option_1, option_2, option_3, option_4]);
 const submitbtn = document.querySelector("#submit");
-const currentQuiz = 0;
-const score = 0;
+let currentQuiz = 0;
+let score = 0;
 
 //load QuizFunction
 const loadQuiz = () => {
-  const { questions, options } = quizdData[currentQuiz];
+  const { questions, options } = quizData[currentQuiz];
   questionElm.innerText = questions;
   options.forEach(
     (curOption, index) => (window[`option_${index + 1}`].innerText = curOption)
@@ -64,3 +64,39 @@ const loadQuiz = () => {
 };
 
 loadQuiz();
+
+//step 4: get selected answer function on button click.
+
+const getSelectedOption = () => {
+  // let ans_index;
+  // answerElm.forEach((curOption, index) => {
+  //   if (curOption.checked) {
+  //     ans_index = index;
+  //   }
+  // });
+  // return ans_index;
+  let answerElement = Array.from(answerElm);
+  return answerElement.findIndex((curElem) => curElem.checked);
+};
+const deSelectedAnswer = () => {
+  return answerElm.forEach((curElem) => (curElem.checked = false));
+};
+submitbtn.addEventListener("click", () => {
+  const selectedOptionIndex = getSelectedOption();
+  console.log(selectedOptionIndex);
+
+  if (selectedOptionIndex === quizData[currentQuiz.correct]) {
+    score = score + 1;
+  }
+  currentQuiz++;
+
+  if (currentQuiz < quizData.length) {
+    deSelectedAnswer();
+    loadQuiz();
+  } else {
+    quiz.innerHTML = `
+    <div class="result">
+    <h2> 
+    `;
+  }
+});

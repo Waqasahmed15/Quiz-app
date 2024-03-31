@@ -38,6 +38,7 @@ const quizData = [
   },
 ];
 // java script initialization;
+const quiz = document.querySelector("#quiz");
 const answerElm = document.querySelectorAll(".answer");
 // console.log(answerElm[3]);
 const [questionElm, option_1, option_2, option_3, option_4] =
@@ -96,7 +97,10 @@ submitbtn.addEventListener("click", () => {
   } else {
     quiz.innerHTML = `
     <div class="result">
-    <h2> 
+    <h2> 🏆 Your Score: ${score}/${quizData.length} Correct Answer </h2>
+    <p>Congratulations on Completing the Quiz! 🎉</p>
+    <button class="reload-button" onclick="location.reload()">Play Again 🔄</button>
+    </div> 
     `;
   }
 });

@@ -39,10 +39,17 @@ const quizdData = [
 ];
 // java script initialization;
 const answerElm = document.querySelectorAll(".answer");
+// console.log(answerElm[3]);
 const [questionElm, option_1, option_2, option_3, option_4] =
   document.querySelectorAll(
     "#question, .option_1, .option_2 .option_3 .option_4 "
   );
+// console.log(questionElm);
+// console.log(option_1);
+// console.log(option_2);
+// console.log(option_3);
+// console.log(option_4);
+// console.table([questionElm, option_1, option_2, option_3, option_4]);
 const submitbtn = document.querySelector("#submit");
 const currentQuiz = 0;
 const score = 0;

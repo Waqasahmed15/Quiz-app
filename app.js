@@ -11,7 +11,7 @@ const quizData = [
   },
   {
     questions:
-      "Whic CSS Property is used  to control the spacing between elements?",
+      "Which CSS Property is used  to control the spacing between elements?",
     options: ["margin", "padding", "spacing", "border-spacing"],
     correct: 1,
   },
@@ -20,7 +20,7 @@ const quizData = [
     options: [
       "document.query",
       "getElementById",
-      "selectElemnet",
+      "selectElement",
       "findElementById",
     ],
     correct: 1,
@@ -86,8 +86,8 @@ submitbtn.addEventListener("click", () => {
   const selectedOptionIndex = getSelectedOption();
   console.log(selectedOptionIndex);
 
-  if (selectedOptionIndex === quizData[currentQuiz.correct]) {
-    score = score + 1;
+  if (selectedOptionIndex == quizData[currentQuiz.correct]) {
+    score + score + 1;
   }
   currentQuiz++;
 

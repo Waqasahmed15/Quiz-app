@@ -53,7 +53,7 @@ const [questionElm, option_1, option_2, option_3, option_4] =
 // console.table([questionElm, option_1, option_2, option_3, option_4]);
 const submitbtn = document.querySelector("#submit");
 let currentQuiz = 0;
-let score;
+let score = 0;
 
 //load QuizFunction
 const loadQuiz = () => {
